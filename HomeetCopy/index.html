@@ -59,7 +59,7 @@
           <div class="general-info">
             <div class="text-input">
               <div class="user-name">Имя пользователя</div>
-              <input id="nameInput" class="name-input" type="text" placeholder="Имя пользователя" />
+              <input id="nameInput" class="name-input" type="text" placeholder="Фамилия Имя" pattern="[A-Za-zА-Яа-яЁё]{2,15}\s[A-Za-zА-Яа-яЁё]{2,15}"/>
               <div class="horizontal-page">
                 <div class="button-gen">
                   <input id="maleInput1" class="male-input" name="gender" value="Парень" type="radio"
@@ -73,10 +73,15 @@
                 </div>
               </div>
             </div>
-            <input id="dateInput" class="date-input" type="date" placeholder="Дата рождения" />
-
-            <input class="tg-input" type="text" placeholder="Телеграм" />
-            <input class="number-input" type="text" placeholder="Номер телефона" />
+            <input id="dateInput" class="date-input" type="date" placeholder="Дата рождения" pattern="^\d\.\d\.\d$" />
+            <div>
+              <div class="user-name">Телеграм</div>
+              <input class="tg-input" type="text" placeholder="Формат: @username" pattern="[@][A-Za-z0-9_]{5,20}" />
+            </div>
+            <div>
+              <div class="user-name">Номер телефона</div>
+              <input class="number-input" type="tel" placeholder="Формат: +79999999999" pattern="[+]7\d{10}" />
+            </div>
             <div class="general-about">
               <div class="user-name">О себе</div>
               <input id="aboutInput" class="about-input" type="text" placeholder="О себе" />

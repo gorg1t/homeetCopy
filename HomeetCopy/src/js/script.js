@@ -49,7 +49,14 @@ function check() {
 }
 
 aboutInput.addEventListener('input', () => {
-    profileAbout.textContent = aboutInput.value;
+    let length = aboutInput.value.length
+    if (length >= 63){
+        profileAbout.textContent = aboutInput.value.slice(0, 66) + "...";
+    }
+    else
+    {
+        profileAbout.textContent = aboutInput.value;
+    }
 });
 
 dateInput.addEventListener('input', () => {

@@ -236,6 +236,7 @@ body {
 
 .upload-button-text {
   line-height: 20px;
+  margin-right: 10px;
 }
 
 .profile-preview-title {
@@ -904,7 +905,6 @@ body {
   letter-spacing: -0.02em;
   line-height: 48px;
   word-wrap: break-word;
-  width: 100%;
 }
 
 .technical-support,
@@ -969,6 +969,7 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   gap: 8px;
+  margin-right: 10px;
 }
 
 .footer-row1,
@@ -1063,4 +1064,12 @@ body {
   position: relative;
   align-items: center;
   gap: 64px;
+}
+
+
+
+input:invalid {
+  border: solid red;
+  color: red;
+  box-shadow: none;
 }
