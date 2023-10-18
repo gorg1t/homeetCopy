@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <link rel="stylesheet" href="src/css/style.css" />
+  <link rel="stylesheet" href="src/css/resolution.css" />
+  <link rel="stylesheet" href="src/fonts/MuseoSansCyrl500.otf" />
+  <link rel="stylesheet" href="src/fonts/MuseoSansCyrl700.otf" />
+</head>
+
+<body>
+  <div class="page">
+    <header class="registration-header">
+      <div class="header">
+        <div class="stranger">
+          <img class="icon" alt="" src="src/img/logo.svg" />
+        </div>
+        <div class="button-gen-exit">
+          <button class="button">
+            <div class="exit-button">Выйти из аккаунта</div>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <div class="title">
+        <button class="button" href="#">
+          <div class="back-button">На главную</div>
+        </button>
+        <div class="heading-page">
+          <div class="heading">
+            <div class="heading-text">Создание профиля</div>
+            <div class="subheading">
+              <div class="subheading-text">/</div>
+              <div class="subheading-text">О себе</div>
+            </div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-bar-child"></div>
+          </div>
+        </div>
+      </div>
+      <div class="content-page">
+        <div class="profile-form">
+          <div class="upload">
+            <div class="upload-frame">
+              <div class="upload-title">Аватар профиля</div>
+              <button class="upload-button">
+                <div class="upload-button-text">Загрузить</div>
+              </button>
+            </div>
+            <div class="upload-description">
+              Загрузите фотографию весом не более 10 мб
+            </div>
+          </div>
+          <div class="general-info">
+            <div class="text-input">
+              <div class="user-name">Имя пользователя</div>
+              <input id="nameInput" class="name-input" type="text" placeholder="Фамилия Имя" pattern="[A-Za-zА-Яа-яЁё]{2,15}\s[A-Za-zА-Яа-яЁё]{2,15}"/>
+              <div class="horizontal-page">
+                <div class="button-gen">
+                  <input id="maleInput1" class="male-input" name="gender" value="Парень" type="radio"
+                    onclick="check()" />
+                  <label for="maleInput1" class="radio__label">Парень</label>
+                </div>
+                <div class="button-gen">
+                  <input id="maleInput2" class="male-input" name="gender" value="Девушка" type="radio"
+                    onclick="check()" />
+                  <label for="maleInput2" class="radio__label">Девушка</label>
+                </div>
+              </div>
+            </div>
+            <input id="dateInput" class="date-input" type="date" placeholder="Дата рождения" pattern="^\d\.\d\.\d$" />
+            <div>
+              <div class="user-name">Телеграм</div>
+              <input class="tg-input" type="text" placeholder="Формат: @username" pattern="[@][A-Za-z0-9_]{5,20}" />
+            </div>
+            <div>
+              <div class="user-name">Номер телефона</div>
+              <input class="number-input" type="tel" placeholder="Формат: +79999999999" pattern="[+]7\d{10}" />
+            </div>
+            <div class="general-about">
+              <div class="user-name">О себе</div>
+              <input id="aboutInput" class="about-input" type="text" placeholder="О себе" />
+              <div class="about-placeholder">
+                Например: Редко готовлю, но люблю ботать на кухне по
+                ночам. Хочу завести собаку. Очень люблю читать, играть в
+                хорроры и смотреть аниме. Открыт к общению и взаимопомощи
+                :)
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="preview-page">
+          <div class="preview-text-page">
+            <div class="preview-text">
+              <div class="profile-preview-title">
+                Так будет выглядеть твоя будущая страница
+              </div>
+            </div>
+            <div class="profile-preview">
+              <div class="profile-card-header">
+                <div class="profile-image">
+                  <img class="user-img">
+                </div>
+                <div class="profile-contacts">
+                  <div class="profile-contacts-text">Показать контакты</div>
+                </div>
+              </div>
+              <div class="profile-general">
+                <div class="profile-card-content">
+                  <div class="profile-card-text">
+                    <div class="wrapper-up">
+                      <div class="profile-card-name"></div>
+                    </div>
+                    <div class="profile-card-shortInfo">
+                      <div class="nav-link">
+                        <div class="profile-card-shortInfo-gen"></div>
+                      </div>
+                      <div class="ellipse-wrapper">
+                        <div class="dot-char"></div>
+                      </div>
+                      <div class="nav-link">
+                        <div class="profile-card-shortInfo-age"></div>
+                      </div>
+                      <div class="ellipse-wrapper">
+                        <div class="dot-char"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="profile-card-about">
+                    <div class="profile-card-about-text">
+                    </div>
+                    <div class="expand">
+                      <div class="profile-card-about-expand">Развернуть</div>
+                      <div class="arrow-expand">
+                        <img class="arrow-expand-img" alt="" src="src/img/arrowExpand.svg" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="preferences-card">
+                  <div class="preferences-card-text"></div>
+                  <div class="line"></div>
+                  <div class="preferences-card-text"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-you-main">
+            <div class="about-you-frame">
+              <div class="about-you">
+                <div class="about-you-text1">Мы совсем ничего про тебя не знаем</div>
+                <div class="about-you-text2">
+                  <p class="p">Расскажи о себе.</p>
+                  <p class="p">Люди пишут тем, кому доверяют. Тем более при поиске соседа</p>
+                </div>
+              </div>
+              <div class="emoji">🙁</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="button-container1">
+        <div class="button-continue">
+          <div class="button-continue-text">Продолжить</div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-row1">
+          <div class="text-input">
+            <div class="supporthomeetcom">Support@homeet.com</div>
+            <div class="technical-support">
+              <div class="standart-text">Техническая поддержка</div>
+            </div>
+          </div>
+          <div class="about-label-frame">
+            <div class="about-label">
+              <div class="nav-link">
+                <div class="standart-text">О сервисе</div>
+              </div>
+              <div class="nav-link">
+                <div class="standart-text">Контакты</div>
+              </div>
+              <div class="nav-link">
+                <div class="standart-text">Политика конфиденциальности</div>
+              </div>
+            </div>
+            <div class="social-tg-parent">
+              <a class="social-tg" href="https://web.telegram.org/" target="_blank">
+                <img class="vector-icon" alt="" src="src/img/tgLogo.svg" />
+              </a>
+              <a class="social-tg" href="https://vk.com" target="_blank">
+                <img class="vector-icon" alt="" src="src/img/vklogo.svg" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-row2"></div>
+        <div class="footer-disclaimer">
+          <div class="footer-disclaimer-text">
+            <p class="p">Предложение не является публичной офертой.</p>
+            <p class="p">
+              Сервис не несет ответственности за действия пользователей,
+              достоверность информации и т.д.
+            </p>
+          </div>
+          <div class="upload-button-text">
+            <span>Сделано в </span>
+            <span class="span">бвср</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-child"></div>
+    </footer>
+  </div>
+</body>
+<script src="src/js/script.js"></script>
+
+</html>
