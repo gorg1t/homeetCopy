@@ -143,8 +143,7 @@ body {
 
 .back-button,
 .heading-text,
-.subheading-text,
-.button-continue-text {
+.subheading-text {
   position: relative;
   letter-spacing: -0.01em;
 }
@@ -166,7 +165,9 @@ body {
 .button-continue-text {
   line-height: 24px;
 }
-
+.button-continue-text {
+  color: #fff;
+}
 .heading,
 .subheading {
   display: flex;
@@ -236,7 +237,7 @@ body {
 
 .upload-button-text {
   line-height: 20px;
-  margin-right: 10px;
+  user-select: none;
 }
 
 .profile-preview-title {
@@ -878,8 +879,13 @@ body {
   align-items: center;
   justify-content: center;
   padding: 12px 64px;
-  opacity: 0.2;
 }
+
+.button-continue:hover {
+  filter: brightness(120%);
+}
+
+
 
 .button-container1 {
   align-self: stretch;
@@ -1066,10 +1072,14 @@ body {
   gap: 64px;
 }
 
-
-
 input:invalid {
   border: solid red;
   color: red;
   box-shadow: none;
+}
+
+.radio-error {
+  color: red;
+  font-size: smaller;
+  display: none;
 }
