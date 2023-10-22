@@ -2,14 +2,16 @@
 <html>
 
 <head>
+  <link rel="icon" href="src/img/homeetIcon.ico" type="image/x-icon">
+  <title>HomeetCopy</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1, width=device-width" />
   <link rel="stylesheet" href="src/css/style.css" />
   <link rel="stylesheet" href="src/css/resolution.css" />
   <link rel="stylesheet" href="src/fonts/MuseoSansCyrl500.otf" />
   <link rel="stylesheet" href="src/fonts/MuseoSansCyrl700.otf" />
+  
 </head>
-
 <body>
   <div class="page">
     <header class="registration-header">
@@ -44,7 +46,7 @@
         </div>
       </div>
       <div class="content-page">
-        <form class="profile-form" novalidate>
+        <form class="profile-form" id="registrationForm" novalidate>
           <div class="upload">
             <div class="upload-frame">
               <div class="upload-title">Аватар профиля</div>
@@ -170,7 +172,7 @@
         </div>
       </div>
       <div class="button-container1">
-        <button class="button-continue">
+        <button class="button-continue" form="registrationForm" type="submit">
           <div class="button-continue-text">Продолжить</div>
         </button>
       </div>

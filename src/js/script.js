@@ -15,6 +15,25 @@ const profileImage = document.querySelector('.user-img');
 
 const radioError = document.querySelector('.radio-error')
 
+const registrationForm = document.querySelector('#registrationForm')
+
+
+registrationForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    nameInput.setAttribute("required", true);
+    aboutInput.setAttribute("required", true);
+    dateInput.setAttribute("required", true);
+    tgInput.setAttribute("required", true);
+    numberInput.setAttribute("required", true);
+    maleInput.setAttribute("required", true);
+    if (!maleInput.validity.valid) {
+        radioError.style.display = "inline";
+    }
+    if (nameInput.validity.valid && aboutInput.validity.valid && dateInput.validity.valid && tgInput.validity.valid && numberInput.validity.valid && maleInput.validity.valid) {
+        console.log(1);
+        registrationForm.submit();
+    }
+});
 
 uploadBtn.addEventListener('click', () => {
 
@@ -69,23 +88,6 @@ dateInput.addEventListener('input', () => {
     const age = ~~((Date.now() - birthDate) / (31557600000));
     profileAge.textContent = `${age} лет`;
 });
-
-
-continueBtn.addEventListener('click', () => {
-    nameInput.setAttribute("required", true);
-    aboutInput.setAttribute("required", true);
-    dateInput.setAttribute("required", true);
-    tgInput.setAttribute("required", true);
-    numberInput.setAttribute("required", true);
-    maleInput.setAttribute("required", true);
-    if (!maleInput.validity.valid) {
-        radioError.style.display = "inline";
-    }
-    if (nameInput.validity.valid && aboutInput.validity.valid && dateInput.validity.valid && tgInput.validity.valid && numberInput.validity.valid && maleInput.validity.valid) {
-        console.log('1');
-    }
-})
-
 
 
 
