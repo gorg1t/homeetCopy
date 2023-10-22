@@ -19,7 +19,10 @@ const registrationForm = document.querySelector('#registrationForm')
 
 
 registrationForm.addEventListener('submit', (event) => {
+    
     event.preventDefault();
+    
+    
     nameInput.setAttribute("required", true);
     aboutInput.setAttribute("required", true);
     dateInput.setAttribute("required", true);
@@ -30,8 +33,18 @@ registrationForm.addEventListener('submit', (event) => {
         radioError.style.display = "inline";
     }
     if (nameInput.validity.valid && aboutInput.validity.valid && dateInput.validity.valid && tgInput.validity.valid && numberInput.validity.valid && maleInput.validity.valid) {
-        console.log(1);
-        registrationForm.submit();
+        alert("Типо отправил форму");
+        let registrationFormElements = registrationForm.querySelectorAll('div');
+        for(let i = 0; i<registrationFormElements.length; i++)
+        {
+            registrationFormElements[i].remove();
+        }
+        let p = document.createElement('p');
+        p.textContent = 'тут будет новая форма...';
+        
+        registrationForm.appendChild(p);
+        
+
     }
 });
 
@@ -47,7 +60,6 @@ uploadBtn.addEventListener('click', () => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = readerEvent => {
-            console.log(readerEvent.target.result);
             profileImage.style.backgroundImage = `url(${readerEvent.target.result})`;
             profileImage.style.height = "140px";
         }
