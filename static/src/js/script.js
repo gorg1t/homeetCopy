@@ -86,7 +86,7 @@ function setGender() {
 }
 
 aboutInput.addEventListener('input', () => {
-    let length = aboutInput.value.length
+    let length = aboutInput.value.length;
     if (length >= 63) {
         profileAbout.textContent = aboutInput.value.slice(0, 66) + "...";
     }

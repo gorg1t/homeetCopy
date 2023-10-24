@@ -1,0 +1,114 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="page">
+
+  {% include 'include/header.html' %}
+
+  <div class="main-content">
+    <div class="title">
+      <button class="button" href="#">
+        <div class="back-button">На главную</div>
+      </button>
+      <div class="heading-page">
+        <div class="heading">
+          <div class="heading-text">Создание профиля</div>
+          <div class="subheading">
+            <div class="subheading-text">/</div>
+            <div class="subheading-text">О себе</div>
+          </div>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-bar-child"></div>
+        </div>
+      </div>
+    </div>
+    <div class="content-page">
+      
+      {% include 'forms/formFirstPage.html' %}
+      
+
+      <div class="preview-page">
+        <div class="preview-text-page">
+          <div class="preview-text">
+            <div class="profile-preview-title">
+              Так будет выглядеть твоя будущая страница
+            </div>
+          </div>
+          <div class="profile-preview">
+            <div class="profile-card-header">
+              <div class="profile-image">
+                <img class="user-img">
+              </div>
+              <div class="profile-contacts">
+                <div class="profile-contacts-text">Показать контакты</div>
+              </div>
+            </div>
+            <div class="profile-general">
+              <div class="profile-card-content">
+                <div class="profile-card-text">
+                  <div class="wrapper-up">
+                    <div class="profile-card-name"></div>
+                  </div>
+                  <div class="profile-card-shortInfo">
+                    <div class="nav-link">
+                      <div class="profile-card-shortInfo-gen"></div>
+                    </div>
+                    <div class="ellipse-wrapper">
+                      <div class="dot-char"></div>
+                    </div>
+                    <div class="nav-link">
+                      <div class="profile-card-shortInfo-age"></div>
+                    </div>
+                    <div class="ellipse-wrapper">
+                      <div class="dot-char"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile-card-about">
+                  <div class="profile-card-about-text">
+                  </div>
+                  <div class="expand">
+                    <div class="profile-card-about-expand">Развернуть</div>
+                    <div class="arrow-expand">
+                      <img class="arrow-expand-img" alt="" src="{% static 'src/img/arrowExpand.svg' %}" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="preferences-card">
+                <div class="preferences-card-text"></div>
+                <div class="line"></div>
+                <div class="preferences-card-text"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-you-main">
+          <div class="about-you-frame">
+            <div class="about-you">
+              <div class="about-you-text1">Мы совсем ничего про тебя не знаем</div>
+              <div class="about-you-text2">
+                <p class="p">Расскажи о себе.</p>
+                <p class="p">Люди пишут тем, кому доверяют. Тем более при поиске соседа</p>
+              </div>
+            </div>
+            <div class="emoji">🙁</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="button-container1">
+      <button class="button-continue" form="registrationForm" type="submit">
+        <div class="button-continue-text">Продолжить</div>
+      </button>
+    </div>
+  </div>
+
+  {% include 'include/footer.html' %}
+
+</div>
+{% endblock content %}

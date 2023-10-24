@@ -865,7 +865,6 @@ body {
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 40px 0 0;
   gap: 60px;
   text-align: center;
   color: #000;

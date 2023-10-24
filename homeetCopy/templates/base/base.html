@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<head>
+    <link rel="icon" href="{% static 'src/img/homeetIcon.ico' %}" type="image/x-icon">
+    <title>HomeetCopy</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="{% static 'src/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'src/css/resolution.css' %}" />
+    <link rel="stylesheet" href="{% static 'src/fonts/MuseoSansCyrl500.otf' %}" />
+    <link rel="stylesheet" href="{% static 'src/fonts/MuseoSansCyrl700.otf' %}" />
+
+</head>
+
+<body>
+    {% block content %}
+        
+    {% endblock content %}   
+</body>
+<script src="{% static 'src/js/script.js' %}"></script>
+
+</html>
