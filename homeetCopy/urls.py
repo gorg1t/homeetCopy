@@ -5,5 +5,7 @@ from . import views
 
 
 urlpatterns = [
-    path("", views.ViewPage.as_view()),
+    path("", views.index),
+
+    path("SaveForm", views.SaveForm, name="SaveForm")
 ]

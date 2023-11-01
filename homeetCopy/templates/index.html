@@ -10,7 +10,7 @@
 
   <div class="main-content">
     <div class="title">
-      <button class="button" href="#">
+      <button class="button" id="prevBtn" onclick="nextPrev(-1)">
         <div class="back-button">На главную</div>
       </button>
       <div class="heading-page">
@@ -27,10 +27,7 @@
       </div>
     </div>
     <div class="content-page">
-      
-      {% include 'forms/formFirstPage.html' %}
-      
-
+      {% include 'forms/form.html' %}
       <div class="preview-page">
         <div class="preview-text-page">
           <div class="preview-text">
@@ -102,7 +99,7 @@
       </div>
     </div>
     <div class="button-container1">
-      <button class="button-continue" form="registrationForm" type="submit">
+      <button class="button-continue" type="button" id="nextBtn" onclick="nextPrev(1)">
         <div class="button-continue-text">Продолжить</div>
       </button>
     </div>

@@ -18,35 +18,24 @@ const radioError = document.querySelector('.radio-error')
 const registrationForm = document.querySelector('#registrationForm')
 
 
-registrationForm.addEventListener('submit', (event) => {
+// registrationForm.addEventListener('submit', (event) => {
     
-    event.preventDefault();
+//     event.preventDefault();
     
     
-    nameInput.setAttribute("required", true);
-    aboutInput.setAttribute("required", true);
-    dateInput.setAttribute("required", true);
-    tgInput.setAttribute("required", true);
-    numberInput.setAttribute("required", true);
-    maleInput.setAttribute("required", true);
-    if (!maleInput.validity.valid) {
-        radioError.style.display = "inline";
-    }
-    if (nameInput.validity.valid && aboutInput.validity.valid && dateInput.validity.valid && tgInput.validity.valid && numberInput.validity.valid && maleInput.validity.valid) {
-        alert("Типо отправил форму");
-        let registrationFormElements = registrationForm.querySelectorAll('div');
-        for(let i = 0; i<registrationFormElements.length; i++)
-        {
-            registrationFormElements[i].remove();
-        }
-        let p = document.createElement('p');
-        p.textContent = 'тут будет новая форма...';
+//     nameInput.setAttribute("required", true);
+//     aboutInput.setAttribute("required", true);
+//     dateInput.setAttribute("required", true);
+//     tgInput.setAttribute("required", true);
+//     numberInput.setAttribute("required", true);
+//     maleInput.setAttribute("required", true);
+//     if (!maleInput.validity.valid) {
+//         radioError.style.display = "inline";
+//     }
+//     if (nameInput.validity.valid && aboutInput.validity.valid && dateInput.validity.valid && tgInput.validity.valid && numberInput.validity.valid && maleInput.validity.valid) {
         
-        registrationForm.appendChild(p);
-        
-
-    }
-});
+//     }
+// });
 
 uploadBtn.addEventListener('click', () => {
 
@@ -100,7 +89,60 @@ dateInput.addEventListener('input', () => {
     const age = ~~((Date.now() - birthDate) / (31557600000));
     profileAge.textContent = `${age} лет`;
 });
+//////////////////////////////////////////////////////////////////////
 
 
+var currentTab = 0; 
+showTab(currentTab);
 
+function showTab(n) {
+  var x = document.getElementsByClassName("tab");
+  for(let i = 0; i<x.length; i++)
+  {
+    x[i].style.display = "none";
+  }
+  console.log(x.length);
+  x[n].style.display = "block";
+  if (n == 0) {
+    document.querySelector("#prevBtn").querySelector(".back-button").innerHTML = "На главную";
+  } else {
+    document.querySelector("#prevBtn").querySelector(".back-button").innerHTML = "Назад";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Отправить";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Продолжить";
+  }
+}
 
+function nextPrev(n) {
+  var x = document.getElementsByClassName("tab");
+  if (n == 1 && !validateForm()) return false;
+  x[currentTab].style.display = "none";
+  currentTab = currentTab + n;
+  console.log(currentTab);
+  console.log(x.length);
+  if (currentTab >= x.length) {
+    registrationForm.submit();
+    return false;
+  }
+  showTab(currentTab);
+}
+
+function validateForm() {
+    nameInput.setAttribute("required", true);
+    aboutInput.setAttribute("required", true);
+    dateInput.setAttribute("required", true);
+    tgInput.setAttribute("required", true);
+    numberInput.setAttribute("required", true);
+    maleInput.setAttribute("required", true);
+    if (!maleInput.validity.valid) {
+        radioError.style.display = "inline";
+    }
+    if (nameInput.validity.valid && aboutInput.validity.valid && dateInput.validity.valid && tgInput.validity.valid && numberInput.validity.valid && maleInput.validity.valid) {
+        return true;
+    }
+    else{
+        return false;
+    }
+}

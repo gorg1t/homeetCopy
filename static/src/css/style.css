@@ -429,13 +429,15 @@ body {
 }
 
 .general-info {
+  display: flex;
   align-self: stretch;
   gap: 24px;
   text-align: left;
   color: #040013;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
-.general-info,
 .preview-text,
 .profile-form {
   display: flex;
