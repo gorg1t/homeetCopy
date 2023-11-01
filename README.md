@@ -1,2 +1,2 @@
 # homeetCopy
-homeet site copy for HW
+homeet site copy
